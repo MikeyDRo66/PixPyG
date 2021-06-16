@@ -1,25 +1,13 @@
-import threading
+import time
 
-global T
 
-def timecounter(count):
-
-    global T 
-    
-    T = count
-
-    Time = threading.Timer(1.0, countDown, args=None, kwargs=None)
-    Time.start()
    
 
-def countDown():
+def countDown(StartTime, currentTime):
 
-    global T
-    T = T - 1
-
-    if T > 0:
-        Time = threading.Timer(1.0, countDown, args=None, kwargs=None)
-        Time.start()
       
+        returnTime = int(currentTime) - int(StartTime)
 
-
+        return returnTime
+        
+        
